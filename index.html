@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robert Dusing | IT support and network technician</title>
+<meta name="description" content="Robert Dusing is an IT support technician in Dayton, Ohio with 4+ years of enterprise help desk experience and a hands-on home network lab, looking for NOC and network technician roles.">
+<meta property="og:title" content="Robert Dusing | IT support and network technician">
+<meta property="og:description" content="4+ years of enterprise help desk experience. Hands-on with DNS, VPN tunneling, subnet routing, and LAN administration. Open to NOC and network technician roles.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2318222D'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%2323A55A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F7F9FA;
+    --white: #FFFFFF;
+    --ink: #18222D;
+    --muted: #4F5D6B;
+    --rule: #D3DAE0;
+    --cable: #0B6BAE;
+    --cable-dark: #08578E;
+    --cable-tint: #E3EFF8;
+    --led-green: #23A55A;
+    --led-amber: #E0A100;
+    --display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+    --body: "Barlow", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --max: 1080px;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  a { color: var(--cable); text-underline-offset: 3px; }
+  a:hover { color: var(--cable-dark); }
+  :focus-visible { outline: 3px solid var(--cable); outline-offset: 3px; border-radius: 4px; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+  .skip { position: absolute; left: -999px; top: 8px; background: var(--white); padding: 8px 12px; }
+  .skip:focus { left: 8px; }
+
+  /* Hero */
+  .hero { padding: 56px 0 48px; }
+  .hero-grid { display: grid; gap: 40px; align-items: center; }
+  .name {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(56px, 11vw, 104px);
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    margin: 0 0 20px;
+  }
+  .lede { font-size: 20px; line-height: 1.5; max-width: 34ch; margin: 0 0 20px; }
+  .status { display: flex; align-items: center; gap: 10px; margin: 0 0 6px; font-weight: 500; }
+  .where { color: var(--muted); margin: 0 0 28px; padding-left: 22px; }
+  .led {
+    flex: none;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--led-green);
+    box-shadow: 0 0 0 3px rgba(35, 165, 90, 0.18);
+  }
+  .led.amber { background: var(--led-amber); box-shadow: 0 0 0 3px rgba(224, 161, 0, 0.2); }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    min-height: 46px; padding: 0 18px;
+    border: 1.5px solid var(--ink); border-radius: 6px;
+    color: var(--ink); background: var(--white);
+    font-weight: 600; font-size: 16px; text-decoration: none;
+  }
+  .btn:hover { background: var(--cable-tint); color: var(--ink); }
+  .btn.primary { background: var(--cable); border-color: var(--cable); color: var(--white); }
+  .btn.primary:hover { background: var(--cable-dark); border-color: var(--cable-dark); color: var(--white); }
+  .btn svg { width: 18px; height: 18px; }
+
+  /* Diagram */
+  .diagram { margin: 0; background: var(--white); border: 1.5px solid var(--ink); border-radius: 10px; padding: 18px 18px 14px; }
+  .diagram svg { display: block; width: 100%; height: auto; font-family: var(--body); }
+  .diagram figcaption { font-size: 15px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 10px; margin-top: 6px; }
+  .node rect { fill: var(--white); stroke: var(--ink); stroke-width: 1.5; }
+  .node.key rect { fill: var(--cable-tint); stroke: var(--cable); stroke-width: 2; }
+  .node .t1 { font-size: 15px; font-weight: 600; fill: var(--ink); }
+  .node .t2 { font-size: 13px; fill: var(--muted); }
+  .wire { fill: none; stroke: var(--ink); stroke-width: 1.5; }
+  .tunnel { fill: none; stroke: var(--cable); stroke-width: 2.5; stroke-dasharray: 7 6; }
+  .wire-label { font-size: 13px; fill: var(--cable-dark); font-weight: 500; }
+  .power rect { fill: #EEF1F3; stroke: var(--rule); }
+  .power text { font-size: 13px; fill: var(--muted); }
+  .packet { fill: var(--led-green); }
+
+  /* Sections */
+  section.part { border-top: 2px solid var(--ink); padding: 28px 0 40px; display: grid; gap: 8px 40px; }
+  section.part > h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 1.1;
+    margin: 0;
+  }
+  .content > *:first-child { margin-top: 0; }
+  .content p, .content li { max-width: 68ch; }
+  h3 { font-size: 19px; line-height: 1.35; margin: 0; font-weight: 600; }
+  .role { padding: 0 0 26px; }
+  .role + .role { border-top: 1px solid var(--rule); padding-top: 22px; }
+  .role:last-child { padding-bottom: 0; }
+  .role-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; align-items: baseline; }
+  .dates { font-family: var(--display); font-weight: 500; font-size: 19px; color: var(--muted); white-space: nowrap; }
+  .place { color: var(--muted); margin: 2px 0 10px; }
+  ul.points { margin: 0; padding-left: 20px; }
+  ul.points li { margin: 0 0 6px; }
+  ul.points li::marker { color: var(--cable); }
+
+  .project { padding: 0 0 26px; }
+  .project + .project { border-top: 1px solid var(--rule); padding-top: 22px; }
+  .project:last-child { padding-bottom: 0; }
+  .project h3 { margin-bottom: 8px; }
+
+  dl.specs { margin: 0; display: grid; gap: 14px 24px; }
+  dl.specs dt { font-weight: 600; }
+  dl.specs dd { margin: 0; color: var(--ink); }
+
+  .creds { list-style: none; margin: 0 0 24px; padding: 0; }
+  .creds li { display: grid; grid-template-columns: 12px 1fr; gap: 4px 14px; align-items: start; padding: 0 0 14px; }
+  .creds .led { margin-top: 7px; }
+  .creds .state { grid-column: 2; color: var(--muted); font-size: 16px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 15px; color: var(--muted); margin: 0 0 18px; }
+  .legend span { display: inline-flex; align-items: center; gap: 8px; }
+  .legend .led { width: 10px; height: 10px; }
+
+  .contact-list { list-style: none; padding: 0; margin: 0 0 18px; display: grid; gap: 8px; }
+  .contact-list a { font-weight: 500; }
+  footer { border-top: 1px solid var(--rule); padding: 20px 0 40px; color: var(--muted); font-size: 15px; }
+
+  @media (min-width: 860px) {
+    .hero { padding: 88px 0 72px; }
+    .hero-grid { grid-template-columns: 1.05fr 1fr; gap: 56px; }
+    section.part { grid-template-columns: 200px 1fr; padding: 32px 0 52px; }
+    dl.specs { grid-template-columns: 190px 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .packet { display: none; }
+  }
+
+  @media print {
+    .hero-grid { grid-template-columns: 1fr; }
+    .diagram, .actions { display: none; }
+    body { background: #fff; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 class="name">Robert<br>Dusing</h1>
+      <p class="lede">IT support technician with 4+ years of enterprise help desk experience and a hands-on home network lab.</p>
+      <p class="status"><span class="led" aria-hidden="true"></span>Open to NOC and network technician roles</p>
+      <p class="where">Based in Dayton, Ohio</p>
+      <div class="actions">
+        <a class="btn primary" href="resume.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
+          Download resume (PDF)
+        </a>
+        <a class="btn" href="mailto:dusrj@protonmail.com">Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/robert-dusing-a95543259" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/DuZii56" rel="noopener">GitHub</a>
+      </div>
+    </div>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 420 470" role="img" aria-labelledby="dia-title dia-desc">
+        <title id="dia-title">Home network lab, logical view</title>
+        <desc id="dia-desc">A phone or laptop away from home connects through a Tailscale tunnel to a GL.iNet GL-AXT1800 subnet router. The router connects to a multi-node TP-Link Deco mesh network, which serves a Pi-hole DNS filter, a Raspberry Pi Samba NAS, and home devices. A UPS provides backup power.</desc>
+
+        <circle class="packet" r="6" cx="0" cy="0">
+          <animateMotion dur="3.2s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;0.55;1" calcMode="linear" path="M210 46 V 390"/>
+        </circle>
+
+        <path id="route" class="tunnel" d="M210 74 V 150"/>
+        <text class="wire-label" x="222" y="117">Tailscale tunnel</text>
+        <path class="wire" d="M210 206 V 262"/>
+        <path class="wire" d="M210 318 V 340 M70 340 H 350 M70 340 V 362 M210 340 V 362 M350 340 V 362"/>
+
+        <g class="node">
+          <rect x="110" y="18" width="200" height="56" rx="6"/>
+          <text class="t1" x="210" y="42" text-anchor="middle">Phone or laptop</text>
+          <text class="t2" x="210" y="61" text-anchor="middle">away from home</text>
+        </g>
+        <g class="node key">
+          <rect x="110" y="150" width="200" height="56" rx="6"/>
+          <text class="t1" x="210" y="174" text-anchor="middle">GL.iNet GL-AXT1800</text>
+          <text class="t2" x="210" y="193" text-anchor="middle">Tailscale subnet router</text>
+        </g>
+        <g class="node">
+          <rect x="110" y="262" width="200" height="56" rx="6"/>
+          <text class="t1" x="210" y="286" text-anchor="middle">TP-Link Deco mesh</text>
+          <text class="t2" x="210" y="305" text-anchor="middle">multi-node, /22 LAN</text>
+        </g>
+        <g class="node">
+          <rect x="10" y="362" width="120" height="56" rx="6"/>
+          <text class="t1" x="70" y="386" text-anchor="middle">Pi-hole v6</text>
+          <text class="t2" x="70" y="405" text-anchor="middle">DNS filtering</text>
+        </g>
+        <g class="node">
+          <rect x="150" y="362" width="120" height="56" rx="6"/>
+          <text class="t1" x="210" y="386" text-anchor="middle">Raspberry Pi</text>
+          <text class="t2" x="210" y="405" text-anchor="middle">Samba NAS</text>
+        </g>
+        <g class="node">
+          <rect x="290" y="362" width="120" height="56" rx="6"/>
+          <text class="t1" x="350" y="386" text-anchor="middle">Home devices</text>
+          <text class="t2" x="350" y="405" text-anchor="middle">auto backup</text>
+        </g>
+        <g class="power">
+          <rect x="10" y="432" width="400" height="28" rx="4"/>
+          <text x="210" y="451" text-anchor="middle">UPS backup power keeps the lab up during outages</text>
+        </g>
+      </svg>
+      <figcaption>My home lab, logical view. Details are in <a href="#projects">Projects</a>.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+  <section class="part" id="about" aria-labelledby="about-h">
+    <h2 id="about-h">About</h2>
+    <div class="content">
+      <p>I spent four years on an enterprise help desk at Atos, triaging and escalating network, hardware, and software incidents through ServiceNow. Outside of work I build and troubleshoot my own network: DNS filtering, VPN tunneling, subnet routing, and LAN administration.</p>
+      <p>I also have a bench-tech background. At Batteries Plus I do board-level phone and tablet repair, microsoldering, automotive key programming, and battery diagnostics, and I train the technicians who work with me. I like finding the real cause of a problem, not just the symptom.</p>
+    </div>
+  </section>
+
+  <section class="part" id="experience" aria-labelledby="exp-h">
+    <h2 id="exp-h">Experience</h2>
+    <div class="content">
+      <article class="role">
+        <div class="role-head">
+          <h3>Assistant Manager, Batteries Plus</h3>
+          <span class="dates">2023 to present</span>
+        </div>
+        <p class="place">Dayton, Ohio</p>
+        <ul class="points">
+          <li>Traced a recurring equipment failure on an Autonics TK4S-controlled heater system to an LCD profile overwriting controller values at startup, restoring reliable operation</li>
+          <li>Manage and train a team of 2 technicians on diagnostic and repair procedures</li>
+          <li>Board-level repair on smartphones and tablets, including microsoldering of individual components</li>
+          <li>Cut and program automotive key fobs, diagnosing transponder, immobilizer, and vehicle power faults</li>
+          <li>Diagnose and install automotive batteries; refurbish power-tool battery packs and build custom battery assemblies</li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-head">
+          <h3>Level 1 IT Help Desk Technician, Atos</h3>
+          <span class="dates">2019 to 2023</span>
+        </div>
+        <p class="place">Loveland, Ohio</p>
+        <ul class="points">
+          <li>Resolved an average of 75 tickets per day covering connectivity, hardware, software, and account access for enterprise end users</li>
+          <li>Triaged and escalated incidents through ServiceNow, maintaining queue documentation and workflows that reduced repeat resolution time</li>
+          <li>Diagnosed remote connectivity failures, including VPN access, DNS resolution, and network authentication</li>
+          <li>Mentored incoming technicians through onboarding</li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-head">
+          <h3>Store Manager, Batteries Plus</h3>
+          <span class="dates">2014 to 2019</span>
+        </div>
+        <p class="place">Cincinnati, Ohio</p>
+        <ul class="points">
+          <li>Directed daily operations, inventory control, and staffing for a team of 3; established repair protocols adopted store-wide</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="part" id="projects" aria-labelledby="proj-h">
+    <h2 id="proj-h">Projects</h2>
+    <div class="content">
+      <article class="project">
+        <h3>Home network infrastructure</h3>
+        <ul class="points">
+          <li>Deployed Pi-hole v6 for network-wide DNS filtering, then found and eliminated DNS leakage caused by secondary resolver fallback, Android Private DNS settings, and router-level DNS override behavior</li>
+          <li>Configured a GL.iNet GL-AXT1800 as a Tailscale subnet router for secure remote access to internal network resources</li>
+          <li>Designed a multi-node TP-Link Deco mesh network on a /22 LAN with a Raspberry Pi Samba NAS, automated device backup, and UPS-backed uptime protection</li>
+        </ul>
+      </article>
+
+      <article class="project">
+        <h3>Market arbitrage tool, Python</h3>
+        <ul class="points">
+          <li>Forked and extended an open-source Python tool that finds profitable buy and sell margins for Old School RuneScape items, adding new features and refactoring redundant logic across the existing codebase</li>
+        </ul>
+      </article>
+
+      <article class="project">
+        <h3>Other builds</h3>
+        <ul class="points">
+          <li>Gas-compensation calculator and a turn-based strategy game, both in Python</li>
+          <li>Custom high-performance PC builds</li>
+          <li>Android malware remediation</li>
+        </ul>
+        <p>Code is on <a href="https://github.com/DuZii56" rel="noopener">my GitHub</a>.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="part" id="skills" aria-labelledby="skills-h">
+    <h2 id="skills-h">Skills</h2>
+    <div class="content">
+      <dl class="specs">
+        <dt>Networking</dt>
+        <dd>TCP/IP, DNS, DHCP, LAN/WAN, subnetting, VPN tunneling (Tailscale), subnet routing, mesh topology, firewall configuration, SSH, VoIP</dd>
+        <dt>Monitoring and ticketing</dt>
+        <dd>ServiceNow, Pi-hole query logging, remote desktop support tools</dd>
+        <dt>Systems</dt>
+        <dd>Windows, Linux (Debian, Raspberry Pi OS), macOS, iOS, Android, Active Directory, Samba/SMB</dd>
+        <dt>Scripting</dt>
+        <dd>Python, Bash, PowerShell</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="part" id="training" aria-labelledby="train-h">
+    <h2 id="train-h">Training and leadership</h2>
+    <div class="content">
+      <p class="legend">
+        <span><span class="led" aria-hidden="true"></span>Complete</span>
+        <span><span class="led amber" aria-hidden="true"></span>In progress</span>
+      </p>
+      <ul class="creds">
+        <li>
+          <span class="led amber" aria-hidden="true"></span>
+          <strong>CompTIA A+</strong>
+          <span class="state">In progress, expected Q1 2027</span>
+        </li>
+        <li>
+          <span class="led" aria-hidden="true"></span>
+          <strong>CS50P: Introduction to Python</strong>
+          <span class="state">Complete. Harvard, via edX</span>
+        </li>
+        <li>
+          <span class="led" aria-hidden="true"></span>
+          <strong>IT studies, University of Cincinnati Clermont College</strong>
+          <span class="state">2013 to 2014. Coursework in Java, C++, networking, and system administration</span>
+        </li>
+        <li>
+          <span class="led" aria-hidden="true"></span>
+          <strong>Second Lieutenant, Civil Air Patrol (U.S. Air Force Auxiliary)</strong>
+          <span class="state">Led security operations for public events; trained in search and rescue</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="part" id="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h">Contact</h2>
+    <div class="content">
+      <p>The fastest way to reach me is email.</p>
+      <ul class="contact-list">
+        <li><a href="mailto:dusrj@protonmail.com">dusrj@protonmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/robert-dusing-a95543259" rel="noopener">LinkedIn: robert-dusing-a95543259</a></li>
+        <li><a href="https://github.com/DuZii56" rel="noopener">GitHub: DuZii56</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">Robert Dusing, Dayton, Ohio. Updated November 2026.</div>
+</footer>
+</body>
+</html>
